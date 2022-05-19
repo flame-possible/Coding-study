@@ -6,7 +6,8 @@ int stack[1000001] = {0,};
 int nodecnt = 0;
 
 int main(){
-
+ios_base::sync_with_stdio(false);
+        cin.tie(0);
         int N;
 
         cin >> N;
