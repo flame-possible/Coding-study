@@ -94,8 +94,6 @@ int main(){
                         //      cout << cur << ' ' << v[cur].size() << " color " << temp_color << '\n';
 
                                 for(register int i = 0; i < v[cur].size(); i++){
-                        //              cout << "v[cur] index " << v[cur][i] << '\n';
-                                        if(v[cur][i] <= 0 || v[cur][i] > V) break;
 
                                         if(color[v[cur][i]] != 0){
                                                 if(color[v[cur][i]] == temp_color){
