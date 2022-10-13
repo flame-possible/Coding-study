@@ -9,7 +9,7 @@ int main (){
 	int N;
 	int tmp;
 	int mem[1001] = {0};
-	int ans = 0;
+	int ans = 1;
 	vector<int> v;
 
 	cin >> N;
@@ -27,8 +27,8 @@ int main (){
 				//the reason for max is we could meet less component which we don't have to think abt
 				mem[i] = max(mem[i],mem[j] + 1);
 			}
-		}
 		ans = max(ans,mem[i]);
+		}
 	}
 
 	cout << ans;

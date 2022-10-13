@@ -15,14 +15,13 @@ int main(){
 
         cin >> input;
 
-        long long r_temp = 1;
+        int r_temp = 1;
 
         long long result = 0;
 
         for(register int i = 0; i < L; i++){
                 result += (input[i] - 'a' + 1) * r_temp;
                 r_temp *= r;
-                r_temp %= M;
                 result %= M;
         }
 

@@ -59,53 +59,38 @@ int main(){
                 if(i != 1){
                         result += truck_info[i];
                         truck_capacity -= truck_info[i];
-                        last_village(i);
                 }
-/*
-                cout << "Village num " << i << '\n';
-                cout << "Result " << result << '\n';
-*/
+
                 for(register int j = i + 1; j <= N; j++){
 
-                        //cout << "every village " << j << "\n";
 
                         if(village_info[i][j] != 0){
                                 if(truck_capacity < C){
 
                                         int temp = village_info[i][j];
 
-                                        if(temp >= C - truck_capacity){
+                                        if(temp > C - truck_capacity){
                                                 temp = C - truck_capacity;
                                         }
-                                        village_info[i][j] -= temp;
 
                                         truck_capacity += temp;
                                         truck_info[j] += temp;
-                                        last_village(i);
 
                                 }
 
-                                if(j < last_vil){
+                                else if(j < last_vil){
 
                                         if(village_info[i][j] > truck_info[last_vil]){
 
                                                 int temp = village_info[i][j];
 
-                                                if(truck_capacity < C){
-
-
-
-                                                }
-
-
-                                                while(temp > 0 && j != last_vil){
+                                                while(temp > 0){
 
                                                         if(temp > truck_info[last_vil]){
 
                                                                 truck_info[j] += truck_info[last_vil];
                                                                 temp -= truck_info[last_vil];
                                                                 truck_info[last_vil] = 0;
-                                                                last_village(i);
                                                         }
 
                                                         else{
@@ -113,6 +98,8 @@ int main(){
                                                                 truck_info[j] += temp;
                                                                 temp = 0;
                                                         }
+
+                                                        last_village(i);
 
                                                 }
 
@@ -123,24 +110,12 @@ int main(){
                                                 truck_info[last_vil] -= village_info[i][j];
                                                 truck_info[j] += village_info[i][j];
 
-                                                //last_village(i);
+                                                last_village(i);
 
                                         }
 
                                 }
-/*
-                                cout << "Check village " << j << '\n';
-                                cout << truck_capacity << '\n';
-
-                                for(register int k = 1; k <= N; k++){
-                                        cout << truck_info[k] << ' ';
-                                }
-                                cout << '\n';
-*/
-
                         }
-
-
 
                 }
 
