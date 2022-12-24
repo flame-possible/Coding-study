@@ -1,33 +1,34 @@
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-long long dp[1001][1001] = {0,};
-
 int main(){
-ios_base::sync_with_stdio(false);
+
+        ios_base::sync_with_stdio(false);
         cin.tie(0);
-        int num;
-        cin >> num;
 
-        for(register int k = 0; k < num; k++){
-                int N, K;
+        int T;
 
-                cin >> N >> K;
+        cin >> T;
 
-                for(register int i = 1; i <= K; i++){
+        for(register int t = 0; t < T; t++){
 
-                        for(register int j = 0; j <= K; j++){
-                                if(i == j || j == 0){
-                                        dp[i][j] = 1;
-                                        continue;
-                                }
-                                dp[i][j] = (dp[i-1][j] + dp[i-1][j-1]);
-                        }
+                int N, M;
+
+                cin >> N >> M;
+
+                int result = 1;
+                int temp = 1;
+
+                for(register int i = M; i > M - N; i--){
+
+                        result *= i;
+                        result /= temp++;
 
                 }
 
-                cout << dp[K][N] << '\n';
+                cout << result << '\n';
+
         }
 
         return 0;
