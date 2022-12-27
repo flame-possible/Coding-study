@@ -1,42 +1,21 @@
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 int main(){
 
-	int N;
+        ios_base::sync_with_stdio(false);
+        cin.tie(0);
 
-	cin >> N;
+        int N;
 
+        cin >> N;
 
-	int divide = N / 3;
-	int remain = N % 3;
+        if(N & 1){
+                cout << "SK\n";
+        }
+        else cout << "CY\n";
 
-	int present = 0;
-
-	if(divide & 1){
-		present = 0;
-	}
-	else{
-		present = 1;
-	}
-
-	if(remain == 1){
-		if(present & 1){
-			present = 0;
-		}
-		else{
-			present = 1;
-		}
-	}
-
-	if(present & 1){
-		cout << "CY\n";
-	}
-	else{
-		cout << "SK\n";
-	}
-
-	return 0;
+        return 0;
 
 }
