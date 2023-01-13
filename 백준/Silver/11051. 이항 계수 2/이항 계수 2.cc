@@ -1,8 +1,8 @@
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-int dp[1001][1001] = {0,};
+int tri[1001][1001];
 
 int main(){
 
@@ -10,19 +10,19 @@ int main(){
 
         cin >> N >> K;
 
+        tri[0][0] = 1;
+
+
         for(register int i = 1; i <= N; i++){
 
-                for(register int j = 0; j <= N; j++){
-                        if(i == j || j == 0){
-                                dp[i][j] = 1;
-                                continue;
-                        }
-                        dp[i][j] = (dp[i-1][j] + dp[i-1][j-1]) % 10007;
+                for(register int j = 0; j <= i; j++){
+                        tri[i][j] = (tri[i-1][j-1] + tri[i-1][j]) % 10007;
                 }
 
         }
 
-        cout << dp[N][K] << '\n';
+        cout << tri[N][K] << '\n';
+
 
         return 0;
 

@@ -1,4 +1,4 @@
-# [Silver III] 이항 계수 2 - 11051 
+# [Silver II] 이항 계수 2 - 11051 
 
 [문제 링크](https://www.acmicpc.net/problem/11051) 
 
