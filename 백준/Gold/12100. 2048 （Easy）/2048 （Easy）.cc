@@ -7,19 +7,6 @@ int result;
 
 void DFS(int input[][21], int num){
 
-/*
-
-        for(register int i = 0; i < N; i++){
-                for(register int j = 0; j < N; j++){
-                        cout << input[i][j] << ' ';
-                }
-                cout << '\n';
-        }
-
-        cout << num << '\n';
-*/
-//      if (num == 2) return;
-
         if(num == 5){
 
                 int temp = 0;
@@ -72,25 +59,9 @@ void DFS(int input[][21], int num){
                                         }
 
                                 }
-//                      cout << "j" << ' ' << j << '\n';
                         }
                 }
 
-/*
-                cout << "test\n";
-
-                for(register int j = 0; j < N; j++){
-                        cout << temp[i][j] << ' ';
-                }
-
-                cout << '\n';
-
-
-                        for(register int j = 0; j < N; j++){
-                                cout << check[j] << ' ';
-                        }
-                        cout << '\n';
-*/
 
                 for(register int j = 0; j <= N; j++){
                         check[j] = 0;
@@ -100,7 +71,6 @@ void DFS(int input[][21], int num){
 
         DFS(temp, num+1);
 
-//      return;
 
         for(register int i = 0; i < N; i++){
                 for(register int j = 0; j < N; j++){
@@ -138,16 +108,6 @@ void DFS(int input[][21], int num){
                         }
                 }
 
-/*
-                cout << "test\n";
-
-                for(register int j = 0; j < N; j++){
-                        cout << temp[i][j] << ' ';
-                }
-
-                cout << '\n';
-*/
-
                 for(register int j = 0; j <= N; j++){
                         check[j] = 0;
                 }
@@ -157,7 +117,6 @@ void DFS(int input[][21], int num){
 
         DFS(temp, num+1);
 
-//      return;
 
         for(register int i = 0; i < N; i++){
                 for(register int j = 0; j < N; j++){
@@ -205,7 +164,6 @@ void DFS(int input[][21], int num){
 
         DFS(temp, num+1);
 
-//      return;
 
         for(register int i = 0; i < N; i++){
                 for(register int j = 0; j < N; j++){
@@ -244,17 +202,6 @@ void DFS(int input[][21], int num){
                                 }
 
                         }
-                /*
-                        cout << "test\n";
-
-                        for(register int i = 0; i < N; i++){
-                                cout << temp[i][j] << ' ';
-                                cout << check[i] << ' ';
-
-                        }
-
-                        cout << '\n';
-                */
 
                 }
 
